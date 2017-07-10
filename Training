@@ -1,0 +1,51 @@
+1. Vocabulary
+    - NPM x Bower x Yarn -> Package managers
+    - Gulp x Grunt -> task runners, tools to automatize everything you need.
+    - Webpack x Browserify -> Bundlers to combine your modules into packages, modules, files ...
+    - Babel, Coffescript, Typescript, Flow -> Transpilers, works like a compilers parsing, transformation and code generation.
+        - Babel -> permits write JS using moderns features.
+        - Coffescript -> Introduced a new way to write JS, very similar with Ruby.
+        - Typescript -> Created by MS. Permits to work typing JS.
+        - Flow -> It also permits to work typing JS.
+    - React, Angular, VueJS, Ember, Backbone, Meteor... -> Frameworks
+    - Linters Tools (JSLing, JSHint, ESLint) -> Tools to check syntax and code patterns.
+    - Jest, Jasmine, Mocha, Qunit, Enzyme -> Test Frameworks
+    - Chai, Expect, Sinon -> assertion libs
+    - Karma -> test runner
+    - Istanbul -> test coverage.
+
+2. Install Modules
+    - webpack, wepack-dev-server, webpack plugins
+    - babel, babel-core, babel-preset-react, babel-preset-env
+    - eslint
+    - jest, enzyme
+    - react, react-dom, redux, react-redux
+
+3. Setup Webpack, Babel and ESLint
+    - webpack.config.js
+    - .babelrc
+    - .eslintrc
+
+4. Structure our Project
+
+5. Write our First React Module
+    - JSX
+    - Reconciliation
+    - Lifecycle methods
+    - State x Props
+
+6. Presentional Components x Containers
+
+7. Immutability
+    - Reducers
+    - Immutable.js
+
+8. Selectors (Reselect), Memoization
+
+8. Write our Tests
+
+9. Routes
+
+10. SSR
+
+11. Deploy
