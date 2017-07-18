@@ -1,0 +1,41 @@
+*, *::after,  *::before {
+  box-sizing: border-box;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.float-none {
+  float: none;
+}
+.clear {
+  clear: both;
+}
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.unstyled{
+  list-style: none;
+  padding: 0;
+}
+
+.list-inline li{
+  display: inline-block;
+  padding: 0 10px;
+}

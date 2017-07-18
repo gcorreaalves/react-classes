@@ -1,3 +1,9 @@
+import {
+  todoReducer,
+  todoFilterReducer,
+} from './containers/TodoApp/reducer';
+
 export default {
-  app: (state = {}, action) => state,
+  todos: todoReducer,
+  filter: todoFilterReducer,
 };

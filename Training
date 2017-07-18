@@ -35,6 +35,9 @@
     - State x Props
 
 6. Presentional Components x Containers
+  - Providers
+  - HoC
+  - Presentional Components x Containers
 
 7. Immutability
     - Reducers

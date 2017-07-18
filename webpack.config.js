@@ -22,7 +22,7 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 3000,
     hot: true,
   },
@@ -30,7 +30,11 @@ module.exports = {
     rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      use: 'babel-loader',
+      use: 'babel-loader?cacheDirectory',
+    }, {
+      test: /\.css$/,
+      exclude: /node_modules/,
+      use: ['style-loader', 'css-loader'],
     }],
   },
   plugins: [
