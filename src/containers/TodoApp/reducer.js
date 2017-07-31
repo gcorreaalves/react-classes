@@ -22,12 +22,12 @@ const toggleTodo = (todos, uuid) => {
   });
 };
 
-const removeTodo = (todos, uuid) => {
-  return todos.filter((todo) => {
-    if (todo.uuid !== uuid) {
-      return todo;
-    }
-  });
+const removeTodo = (todos, uuid) => todos.filter(todo => todo.uuid !== uuid);
+
+const removeAllTodo = (todos, status) => {
+  if (status === 'completed') return todos.filter(todo => !todo.completed);
+  if (status === 'active') return todos.filter(todo => todo.completed);
+  return [];
 };
 
 export const todoReducer = (state = [], action) => {
@@ -42,17 +42,23 @@ export const todoReducer = (state = [], action) => {
       newState = removeTodo(state, action.payload.uuid);
       return [...newState];
     case REMOVE_ALL_TODOS:
-      return [];
+      return removeAllTodo(state, action.payload.status);
     default:
       return state;
   }
 };
 
 export const todoFilterReducer = (state = 'ALL', action) => {
+  const filters = ['COMPLETED', 'ACTIVE'];
   switch (action.type) {
     case FILTER_TODOS:
+      if (!action.hasOwnProperty('payload') || 
+          !action.payload.hasOwnProperty('filter') || 
+          filters.indexOf(action.payload.filter) === -1) {
+        return 'ALL';
+      }
       return action.payload.filter;
     default:
-      return state;
+      return state ? state : 'ALL';
   }
 };

@@ -23,6 +23,8 @@ const TodoStyled = styled.div`
   }
 `;
 
+TodoStyled.displayName = 'TodoStyled';
+
 export default (props) => (
   <div className="clear" style={{margin: "10px 0"}}>
     <TodoStyled

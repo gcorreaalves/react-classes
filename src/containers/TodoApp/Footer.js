@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { filterTodo } from './actions';
+import { filterTodo, removeAllTodo } from './actions';
 
 import Button from '../../components/Button';
 import TodoCounter from '../../components/TodoCounter';
@@ -24,10 +24,15 @@ class Footer extends PureComponent {
   constructor(props) {
     super(props);
     this.handleFilterClick = this.handleFilterClick.bind(this);
+    this.handleDeleteCompletedClick = this.handleDeleteCompletedClick.bind(this);
   }
 
   handleFilterClick(filter) {
     this.props.todoFilter(filter);
+  }
+
+  handleDeleteCompletedClick(status) {
+    this.props.removeCompleted(status);
   }
 
   countMissing() {
@@ -43,7 +48,11 @@ class Footer extends PureComponent {
           <TodoFilter handleFilter={this.handleFilterClick} />
         </div>
         <div className="text-right">
-          <Button danger outline>Delete All</Button>
+          <Button
+            danger
+            outline
+            onClick={this.handleDeleteCompletedClick}
+          >Delete Completed</Button>
         </div>
       </FooterStyled>
     );
@@ -56,6 +65,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   todoFilter: (filter) => dispatch(filterTodo(filter)),
+  removeCompleted: () => dispatch(removeAllTodo('completed')),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);

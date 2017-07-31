@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './Header';
-import List from './List';
+import Body from './Body';
 import Footer from './Footer';
 
 const style = {
@@ -14,7 +14,7 @@ class TodoApp extends Component {
     return (
       <div style={style}>
         <Header />
-        <List />
+        <Body />
         <Footer />
       </div>
     );

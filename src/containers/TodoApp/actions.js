@@ -31,9 +31,11 @@ export const removeTodo = uuid => ({
   },
 });
 
-export const removeAllTodo = () => ({
+export const removeAllTodo = status => ({
   type: REMOVE_ALL_TODOS,
-  payload: {},
+  payload: {
+    status,
+  },
 });
 
 export const filterTodo = filter => ({

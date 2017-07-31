@@ -28,7 +28,7 @@ const outline = (props) => {
   return 'white';
 };
 
-export default styled.button`
+const Button = styled.button`
   background-color: ${background};
   border: 1px solid ${border};
   border-radius: 4px;
@@ -40,3 +40,7 @@ export default styled.button`
     color: white;
   }
 `;
+
+Button.displayName = 'Button';
+
+export default Button;
